@@ -1,6 +1,7 @@
 package app.com.yadia.sunshineweather;
 
 import android.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Add the fragment to the FrameLayout
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceHolderFragment())
@@ -37,14 +39,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public static class PlaceHolderFragment extends Fragment {
+    public static class PlaceHolderFragment extends android.support.v4.app.Fragment {
 
 
         public PlaceHolderFragment() {
         }
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
 
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
@@ -89,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
                 if(inputStream == null){
                     return null;
                 }
+
+                //creates input reader for buffer
                 reader = new BufferedReader(new InputStreamReader(inputStream));
 
                 String line;
