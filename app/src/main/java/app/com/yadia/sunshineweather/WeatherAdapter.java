@@ -35,10 +35,12 @@ public class WeatherAdapter extends ArrayAdapter<Weather> {
 
         Weather weatherForecast = getItem(position);
 
-        TextView tempText = (TextView) listView.findViewById(R.id.list_item_forecast_textview);
+        TextView tempText = (TextView) listView.findViewById(R.id.list_item_temp);
         tempText.setText(weatherForecast.getTemp());
-        TextView day;
-        TextView weather;
+        TextView day = (TextView) listView.findViewById(R.id.list_item_date);
+        day.setText(weatherForecast.getDay());
+        TextView weather = (TextView) listView.findViewById(R.id.list_item_weather);
+        weather.setText(weatherForecast.getWeather());
 
         return listView;
     }

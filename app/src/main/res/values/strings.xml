@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SunshineWeather</string>
+
+    <!-- Menu items -->
+    <string name="menu_Refresh">Refresh</string>
+    <string name="menu_setting">Setting</string>
 </resources>
